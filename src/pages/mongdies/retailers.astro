@@ -1,0 +1,36 @@
+---
+
+import Layout from "../../layouts/Layout.astro";
+import Retailer from "../../components/Retailer.astro";
+import {mongdies_retailer_url} from "../../firebase/client";
+
+const data = await fetch(mongdies_retailer_url.toString()).then((response) =>
+    response.json()
+);
+
+---
+
+<Layout title="Mongdies" type="mongdies">
+    <section class="wrapper bg-light">
+        <div class="container py-14 py-md-16">
+            <div class="row text-center">
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <h2 class="fs-16 text-uppercase text-primary mb-3">Retailer Shops</h2>
+                    <h3 class="display-3 mb-10 px-xxl-10">Find mongdies products near you.</h3>
+                </div>
+                <!-- /column -->
+            </div>
+            <!-- /.row -->
+            <div class="row gx-lg-8 gx-xl-12 gy-11 px-xxl-5 text-center d-flex align-items-start">
+                {
+                    data.map(shop => {
+                       return <Retailer data={shop}/>
+                    })
+                }
+            </div>
+            <!--/.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /section -->
+</Layout>

@@ -1,0 +1,75 @@
+---
+
+import Product from "../components/Product.astro";
+import Layout from "../layouts/Layout.astro";
+import {data_url} from "../firebase/client";
+
+const data = await fetch(data_url.toString()).then((response) =>
+    response.json()
+);
+
+
+const environment = import.meta.env.MONGDIES_BASE;
+---
+
+
+<Layout title="Mongdies" type="mongdies" description="Established in 2015, mongdies is a NO.1 baby cosmetic in South Korea."
+image="https://firebasestorage.googleapis.com/v0/b/dragoninnovation-ea771.appspot.com/o/products%2Fmongdies%2FMongdies.jpg?alt=media&token=c48e8720-e9c6-439a-b9d1-32e7f05f149a">
+    <section class="wrapper bg-white">
+        <div class="container py-3 py-md-5">
+            <nav class="d-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">mongdies</li>
+                </ol>
+            </nav>
+            <!-- /nav -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <section class="wrapper bg-light">
+        <div class="container py-14 py-md-16">
+
+            <!--/.row -->
+            <h2 class="display-6">Baby Care Line</h2>
+            <div class="grid grid-view projects-masonry shop mb-13">
+                <div class="row gx-md-8 gy-10 gy-md-13 isotope">
+
+                    {data.map(product => {
+                        if(product.group ==='babycare') return  <Product data={product} path={environment}/>
+                    })}
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+
+            <h2 class="display-6">Maternity Care Line</h2>
+            <div class="grid grid-view projects-masonry shop mb-13">
+                <div class="row gx-md-8 gy-10 gy-md-13 isotope">
+
+                    {data.map(product => {
+                        if(product.group ==='maternitycare') return  <Product data={product} path={environment}/>
+                    })}
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+            <h2 class="display-6">Sun Care Line</h2>
+            <div class="grid grid-view projects-masonry shop mb-13">
+                <div class="row gx-md-8 gy-10 gy-md-13 isotope">
+
+                    {data.map(product => {
+                        if(product.group ==='suncare') return  <Product data={product} path={environment}/>
+                    })}
+
+                </div>
+                <!-- /.row -->
+            </div>
+
+        </div>
+        <!-- /.container -->
+    </section>
+</Layout>

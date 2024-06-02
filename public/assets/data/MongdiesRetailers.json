@@ -1,0 +1,144 @@
+[
+  {
+    "id": "glowcosmetic",
+    "name": "GLOW Cosmetics Center",
+    "addresses": [
+      {
+        "address": "အခန်းနံပါတ် (K5), Market Garden Myeik Shopping Mall, မြိတ်မြို့၊ တနင်္သာရီတိုင်းဒေသကြီး။",
+        "city": "မြိတ်မြို့",
+        "state": "တနင်္သာရီတိုင်း",
+        "phone": "09269582388, 09692022266"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/glowcosmetics.myeik"
+  },
+  {
+    "id": "fancyhouse",
+    "name": "Fancy House One Stop Baby Mart",
+    "addresses": [
+      {
+        "address": "၂၉ လမ်း၊ ၇၃*၇၄ ကြား၊ ချမ်းအေးသာစံမြို့နယ်၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "09-765231939"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/FancyHouseBabyStore"
+  },{
+    "id": "babyworld",
+    "name": "BABY WORLD BABY MART",
+    "addresses": [
+      {
+        "address": "Shop (1) - 63 A လမ်း၊ 42*43 လမ်းကြား၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "09-970500400"
+      },
+      {
+        "address": "Shop (2) - လမ်း (၃၀)၊ 80*81 လမ်းကြား၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "09-976100800"
+      },
+      {
+        "address": "Shop (3) - 62 လမ်း၊ 110*111 လမ်းကြား၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "09-976100800"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/bwbabinutri"
+  },
+  {
+    "id": "glampop",
+    "name": "Glam Pop",
+    "addresses": [
+      {
+        "address": "အမှတ် (၂)၊ မြေညီထပ်၊ ကျွန်းတောလမ်း၊ စမ်းချောင်း၊ ရန်ကုန်မြို့။",
+        "city": "ရန်ကုန်မြို့",
+        "state": "ရန်ကုန်တိုင်း",
+        "phone": "09-755496930, 09-775412938"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/FancyHouseBabyStore"
+  },
+  {
+    "id": "itbaby",
+    "name": "ItBaby UK Branded Baby Products",
+    "addresses": [
+      {
+        "address": "အမှတ် ၃၆၊ ၂၅ လမ်း၊ ၈၀*၈၁ လမ်းကြား၊ အောင်မြေသာဇံမြို့နယ်၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "09-400419088, 09-769392030"
+      }
+    ],
+    "fb_link": "#"
+  },
+  {
+    "id": "awzar",
+    "name": "သြဇာစတိုး",
+    "addresses": [
+      {
+        "address": "၈၉ (D) လမ်း၊ ၃၃ * ၃၅ လမ်းကြား၊ ဒေးဝန်းလမ်း၊ ချမ်းအေးသာစံမြို့နယ်၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "02-4063740, 02-4030676, 09-792012046, 09-2012046, 09-456009300"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/profile.php?id=100070294906820"
+  },
+  {
+    "id": "momeasy",
+    "name": "MOM EASY",
+    "addresses": [
+      {
+        "address": "၈၁ လမ်း၊ ၃၂ * ၃၃ လမ်းကြား၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "02-792421033"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/momeasy210712"
+  },
+  {
+    "id": "tapinshwehtee",
+    "name": "တပင်ရွှေထီးအလှကုန်-မအူပင်",
+    "addresses": [
+      {
+        "address": "အမှတ်(၇၀)မင်းလမ်း၊ (၃)ရပ်ကွက်၊ မအူပင်မြို့။",
+        "city": "မအူပင်မြို့",
+        "state": "ဧရာဝတီတိုင်း",
+        "phone": "02-790450537"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/mathuzar.mub"
+  },
+  {
+    "id": "winmarlar",
+    "name": "Win Mar Lar Fashion Complex",
+    "addresses": [
+      {
+        "address": "ပွဲစားတန်းထိပ်၊ စျေးအနောက်ဘက်၊ မိတ္ထီလာမြို့။",
+        "city": "မိတ္ထီလာမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "02-790450537"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/profile.php?id=100087954480500"
+  },
+  {
+    "id": "PandaBabyStore",
+    "name": "Panda Baby Store",
+    "addresses": [
+      {
+        "address": "အမှတ် ၁၆၁၊ ၂၅* ၈၃ လမ်းကြား၊ မန္တလေးမြို့။",
+        "city": "မန္တလေးမြို့",
+        "state": "မန္တလေးတိုင်း",
+        "phone": "02-790450537"
+      }
+    ],
+    "fb_link": "https://www.facebook.com/PandaBabyStoreMandalay"
+  }
+
+]

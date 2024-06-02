@@ -1,0 +1,33 @@
+---
+import {mongdies_product_url} from "../../firebase/client";
+
+const data = await fetch(mongdies_product_url.toString()).then((response) =>
+    response.json()
+);
+---
+
+<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Brands</a>
+    <ul class="dropdown-menu">
+        <li class="nav-item"><a class="dropdown-item" href="/hanskin">Hanskin</a></li>
+        <li class="nav-item"><a class="dropdown-item" href="/mongdies">mongdies</a></li>
+        <li class="nav-item"><a class="dropdown-item" href="/sugarbear">Sugarbear</a></li>
+    </ul>
+</li>
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
+    <ul class="dropdown-menu">
+        {data.map(link => {
+            return  <li class="dropdown dropdown-submenu dropend"><a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown">{link.category}</a>
+                <ul class="dropdown-menu">
+                    {link.urls.map(u => {
+                        return <li class="nav-item"><a class="dropdown-item" href={u.url}>{u.displayName}</a></li>
+                    })}
+                </ul>
+            </li>
+        })}
+    </ul>
+</li>
+<li class="nav-item"><a class="nav-link" href="/mongdies/retailers">Shops</a></li>
+<li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>

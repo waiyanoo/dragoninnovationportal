@@ -1,0 +1,87 @@
+---
+import OtherLink from "./Link/OtherLink.astro";
+import HomeLink from "./Link/HomeLink.astro";
+import SugarBearLink from "./Link/SugarBearLink.astro";
+import HanskinLink from "./Link/HanskinLink.astro";
+import MongdiesLink from "./Link/MongdiesLink.astro";
+const { type } = Astro.props;
+---
+
+<header class="wrapper bg-gray">
+    <nav class="navbar navbar-expand-lg center-logo transparent navbar-light">
+        <div class="container flex-lg-row flex-nowrap align-items-center">
+            <div class="navbar-brand w-100">
+                <a href="/">
+                    <img src="/assets/img/logos/DragonInnovation.png" srcset="/assets/img/logos/DragonInnovation@2x.png 2x" alt="" />
+                </a>
+            </div>
+            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+                <div class="offcanvas-header d-lg-none">
+                    <h4 class="text-white fs-30 mb-0">Dragon Innovation</h4>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+
+                    <ul class="navbar-nav">
+
+                        {
+                            type == 'home' && <HomeLink />
+
+                        }
+
+                        {
+                            type === 'sugarbear' && <SugarBearLink />
+                        }
+
+                        {
+                            type === 'hanskin' && <HanskinLink />
+                        }
+
+                        {
+                            type === 'mongdies' && <MongdiesLink />
+                        }
+
+                        {
+                            type === 'other' && <OtherLink/>
+                        }
+
+                    </ul>
+                    <!-- /.navbar-nav -->
+                    <div class="offcanvas-footer d-lg-none">
+                        <div>
+                            <a href="mailto:job@dragoninnov.com" class="link-inverse">contact@dragoninnov.com</a>
+                            <br /> (+959) 796 72 72 72 <br />
+                            <nav class="nav social social-white mt-4">
+                                <a href="https://www.facebook.com/sugarbearmyanmar"><i class="uil uil-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/sugarbearmyanmar_official/"><i class="uil uil-instagram"></i></a>
+                                <a href="https://www.facebook.com/hanskinmyanmar"><i class="uil uil-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/hanskinmyanmar_official/"><i class="uil uil-instagram"></i></a>
+                            </nav>
+                            <!-- /.social -->
+                        </div>
+                    </div>
+                    <!-- /.offcanvas-footer -->
+                </div>
+                <!-- /.offcanvas-body -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div class="navbar-other w-100 d-flex ms-auto">
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                    <li class="nav-item d-lg-none">
+                        <button class="hamburger offcanvas-nav-btn" ><span></span></button>
+                    </li>
+                </ul>
+                <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-other -->
+        </div>
+        <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+</header>
+
+<style is:inline>
+    .modal-backdrop.show {
+        z-index: 10!important;
+    }
+</style>

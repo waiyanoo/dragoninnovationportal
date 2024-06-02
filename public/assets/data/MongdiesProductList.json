@@ -1,0 +1,69 @@
+[
+  {
+    "category": "Baby Care",
+    "urls": [
+      {
+        "displayName": "Bath & Shampoo",
+        "url": "/mongdies/BathAndShampoo"
+      },
+      {
+        "displayName": "Ato Lotion",
+        "url": "/mongides/AtoLotion"
+      },
+      {
+        "displayName": "Ato Cream",
+        "url": "/mongides/AtoCream"
+      },
+      {
+        "displayName": "Facial Cleanser",
+        "url": "/mongides/FacialCleanser"
+      },
+      {
+        "displayName": "Soothing Gel",
+        "url": "/mongides/SoothingGel"
+      },
+      {
+        "displayName": "Powder Lotion",
+        "url": "/mongides/PowderLotion"
+      },
+      {
+        "displayName": "Travel Kit",
+        "url": "/mongides/TravelKit"
+      }
+    ]
+  },
+  {
+    "category": "Maternity Care",
+    "urls": [
+      {
+        "displayName": "Witch Hazel Toner",
+        "url": "/mongdies/WitchHazelToner"
+      },
+      {
+        "displayName": "Facial Total Solution Cream",
+        "url": "/mongides/FacialTotalSolutionCream"
+      },
+      {
+        "displayName": "Rose Tightening Cream",
+        "url": "/mongides/RoseTighteningCream"
+      },
+      {
+        "displayName": "Rose Aroma Multi Oil",
+        "url": "/mongides/RoseAromaMultiOil"
+      }
+    ]
+  },
+  {
+    "category": "Sun Care",
+    "urls": [
+      {
+        "displayName": "Sun Cream",
+        "url": "/mongdies/MongdiesSunCream"
+      },
+      {
+        "displayName": "Cleansing Water",
+        "url": "/mongides/CleansingWater"
+      }
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+
+---
+import Layout from "../../layouts/Layout.astro";
+import ProductDetails from "../../components/ProductDetails.astro";
+import {data_url} from "../../firebase/client";
+export function getStaticPaths() {
+    return [
+        {params: {id: 'MoistureCream'}},
+        {params: {id: 'Essence'}},
+        {params: {id: 'AHATreatment'}},
+        {params: {id: 'PinkCapsuleSerum'}},
+        {params: {id: 'BubblePopCleanser'}},
+        {params: {id: 'EyeSerum'}},
+        {params: {id: 'SunCream'}},
+        {params: {id: 'PHA'}},
+        {params: {id: 'BHA'}},
+        {params: {id: 'Blackhead'}},
+        {params: {id: 'Ampoule'}},
+        {params: {id: 'EyeCream'}},
+        {params: {id: 'BBCream'}},
+        {params: {id: 'Blemish'}}
+    ];
+}
+const { id } = Astro.params;
+
+
+const data = await fetch(data_url.toString()).then((response) =>
+    response.json()
+);
+
+
+const product = data.find(d => d.id === id);
+const environment = import.meta.env.HANSKIN_BASE;
+---
+
+<Layout title={product.productName} type="hanskin" image={product.publicImg} description={product.shortDescription}>
+    <section class="wrapper bg-light">
+        <div class="container py-3 py-md-5">
+            <nav class="d-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/hanskin">Hanskin</a></li>
+                    <li class="breadcrumb-item active text-muted" aria-current="page">{product.productName}</li>
+                </ol>
+            </nav>
+            <!-- /nav -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <ProductDetails data={product} path={environment}/>
+</Layout>

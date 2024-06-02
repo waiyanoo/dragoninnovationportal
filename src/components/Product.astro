@@ -1,0 +1,58 @@
+---
+export interface ProductModel{
+    id: string
+    imgUrls: string[]
+    category: string
+    productName: string
+    shortDescription: string
+    description: string
+    price: string
+    discountPrice: string
+    sales: boolean
+    new: boolean
+    page: string
+    sizes: string[]
+    messenger: string
+    publicImg: string
+}
+
+export interface Props{
+    data: ProductModel,
+    path: string
+}
+
+const {data, path} = Astro.props;
+
+---
+
+<div class="project item col-md-6 col-xl-4">
+    <figure class="rounded mb-6">
+        <img src={path + data.imgUrls[0]} srcset={path + data.imgUrls[0]} alt="" />
+        <a class="item-view" href={data.page} data-bs-toggle="white-tooltip" title="Quick view"><i class="uil uil-eye"></i></a>
+        <a href={data.page} class="item-cart"><i class="uil uil-eye"></i> View Details</a>
+        {data.sales && <span class="avatar bg-pink text-white w-10 h-10 position-absolute text-uppercase fs-13 spacing" ><span>Sale!</span></span>}
+        {data.new && <span class="avatar bg-aqua text-white w-10 h-10 position-absolute text-uppercase fs-13 spacing"><span>New!</span></span>}
+    </figure>
+    <div class="post-header">
+        <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+            <div class="post-category text-ash mb-0">{data.category}</div>
+            <span class="ratings five"></span>
+        </div>
+
+        <h2 class="post-title h3 fs-20"><a href={data.page} class="link-dark">{data.productName}</a></h2>
+        <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+            {data.sales && <p class="price"><del><span class="amount">{data.price}</span></del> <ins><span class="amount">{data.discountPrice}</span></ins></p>}
+            {!data.sales && <p class="price"><span class="amount">{data.price}</span></p>}
+
+            <span class="price-duration">{data.sizes[0]}</span>
+        </div>
+    </div>
+    <!-- /.post-header -->
+</div>
+
+<style is:inline>
+    .spacing {
+        top: 1rem;
+        left: 1rem;
+    }
+</style>

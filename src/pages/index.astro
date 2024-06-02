@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Home from "../components/Home.astro";
+import Brand from "../components/Brand.astro";
+import Community from "../components/Community.astro";
+import About from "../components/About.astro";
+import Review from "../components/Review.astro";
+import Contact from "../components/Contact.astro";
+
+---
+
+<Layout title="Welcome to Dragon Innovation" type="home" description="We're a trading company that focuses on distributing health and beauty products in Myanmar."
+		image="https://firebasestorage.googleapis.com/v0/b/dragoninnovation-ea771.appspot.com/o/00%20Primary.jpg?alt=media&token=d6544990-c28d-409a-b176-35fab72eb7e8">
+		<Home/>
+
+		<Brand/>
+
+		<Community/>
+
+		<About/>
+
+		<Review/>
+
+		<Contact/>
+
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

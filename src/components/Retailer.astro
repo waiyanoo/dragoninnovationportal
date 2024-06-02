@@ -1,0 +1,39 @@
+---
+export interface RetailerModel{
+    id: string
+    name: string
+    addresses: Address[]
+    img: string
+    fb_link: string
+}
+export interface Address{
+
+    address: string
+    city: string
+    state: string
+    phone: string
+
+}
+export interface Props{
+    data: RetailerModel,
+    path: string
+}
+
+const {data} = Astro.props;
+---
+<div class="col-lg-6">
+    <div class="card">
+        <div class="card-body px-md-15 px-lg-3">
+            <h3>{data.name}</h3>
+            {
+                data.addresses.map(address => {
+                    return <p class="mb-2">{address.address}</p> <p class="mb-2">{address.phone}</p>
+                })
+            }
+            {
+                data.fb_link !== '' &&
+                    <a href={data.fb_link} class="more hover" target="_blank">Facebook Page</a>
+            }
+        </div>
+    </div>
+</div>

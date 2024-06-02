@@ -1,0 +1,49 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProductDetails from "../../components/ProductDetails.astro";
+import {data_url} from "../../firebase/client";
+export function getStaticPaths() {
+    return [
+        {params: {id: 'BathAndShampoo'}},
+        {params: {id: 'AtoLotion'}},
+        {params: {id: 'AtoCream'}},
+        {params: {id: 'FacialCleanser'}},
+        {params: {id: 'SoothingGel'}},
+        {params: {id: 'PowderLotion'}},
+        {params: {id: 'WitchHazelToner'}},
+        {params: {id: 'FacialTotalSolutionCream'}},
+        {params: {id: 'RoseTighteningCream'}},
+        {params: {id: 'RoseAromaMultiOil'}},
+        {params: {id: 'MongdiesSunCream'}},
+        {params: {id: 'CleansingWater'}},
+        {params: {id: 'TravelKit'}}
+    ];
+}
+
+const data = await fetch(data_url.toString()).then((response) =>
+    response.json()
+);
+
+const { id } = Astro.params;
+const environment = import.meta.env.MONGDIES_BASE;
+const product = data.find(d => d.id === id);
+---
+
+<Layout title="Mongdies" type="mongdies" image={product.publicImg} description={product.shortDescription}>
+    <section class="wrapper bg-light">
+        <div class="container py-3 py-md-5">
+            <nav class="d-inline-block" aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/mongdies">mongdies</a></li>
+                    <li class="breadcrumb-item active text-muted" aria-current="page">{product.productName}</li>
+                </ol>
+            </nav>
+            <!-- /nav -->
+        </div>
+        <!-- /.container -->
+    </section>
+
+    <ProductDetails data={product} path={environment}/>
+</Layout>
+
