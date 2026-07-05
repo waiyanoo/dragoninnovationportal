@@ -12,16 +12,16 @@ const data = await fetch(mongdies_retailer_url.toString()).then((response) =>
 
 <Layout title="Mongdies" type="mongdies">
     <section class="wrapper bg-light">
-        <div class="container py-14 py-md-16">
+        <div class="container py-10 py-md-12">
             <div class="row text-center">
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <h2 class="fs-16 text-uppercase text-primary mb-3">Retailer Shops</h2>
-                    <h3 class="display-3 mb-10 px-xxl-10">Find mongdies products near you.</h3>
+                    <h3 class="display-4 mb-10 px-xxl-10">Find Mongdies products near you.</h3>
                 </div>
                 <!-- /column -->
             </div>
             <!-- /.row -->
-            <div class="row gx-lg-8 gx-xl-12 gy-11 px-xxl-5 text-center d-flex align-items-start">
+            <div class="row gx-md-6 gy-6">
                 {
                     data.map(shop => {
                        return <Retailer data={shop}/>

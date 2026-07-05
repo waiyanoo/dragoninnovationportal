@@ -23,23 +23,37 @@ export interface Props{
 
 const {data, path} = Astro.props;
 ---
-<div class="swiper-slide project item">
-    <figure class="rounded mb-6">
-        <img src={path + data.imgUrls[0]} srcset={path + data.imgUrls[0]} alt="" />
-        <a class="item-view" href={data.page} data-bs-toggle="white-tooltip" title="Quick view"><i class="uil uil-eye"></i></a>
-        <a href={data.page} class="item-cart"><i class="uil uil-eye"></i> View Details</a>
-        {data.sales && <span class="avatar bg-pink text-white w-10 h-10 position-absolute text-uppercase fs-13 spacing" ><span>Sale!</span></span>}
-        {data.new && <span class="avatar bg-aqua text-white w-10 h-10 position-absolute text-uppercase fs-13 spacing"><span>New!</span></span>}
-    </figure>
-    <div class="post-header">
-        <div class="d-flex flex-row align-items-center justify-content-between mb-2">
-            <div class="post-category text-ash mb-0">{data.category}</div>
-            <span class="ratings five"></span>
+<div class="swiper-slide">
+    <div class="card product-card shadow-lg lift h-100 overflow-hidden">
+        <figure class="card-img-top hover-scale ratio ratio-1x1 bg-white mb-0">
+            <img class="product-img" src={path + data.imgUrls[0]} alt={data.productName} loading="lazy" />
+        </figure>
+        <div class="product-badges position-absolute d-flex flex-column gap-1">
+            {data.sales && <span class="badge rounded-pill bg-pink text-white">Sale</span>}
+            {data.new && <span class="badge rounded-pill bg-aqua text-white">New</span>}
         </div>
-        <h2 class="post-title h3 fs-22"><a href={data.page} class="link-dark">{data.productName}</a></h2>
-
-        {data.sales && <p class="price"><del><span class="amount">{data.price}</span></del> <ins><span class="amount">{data.discountPrice}</span></ins></p>}
-        {!data.sales && <p class="price"><span class="amount">{data.price}</span></p>}
+        <div class="card-body p-4">
+            <div class="post-category text-ash fs-13 mb-1">{data.category}</div>
+            <h2 class="post-title fs-16 mb-2"><a href={data.page} class="link-dark stretched-link">{data.productName}</a></h2>
+            {data.sales && <p class="price fs-15 mb-0"><del><span class="amount">{data.price}</span></del> <ins><span class="amount">{data.discountPrice}</span></ins></p>}
+            {!data.sales && <p class="price fs-15 mb-0"><span class="amount">{data.price}</span></p>}
+        </div>
+        <!--/.card-body -->
     </div>
-<!-- /.post-header -->
+    <!--/.card -->
 </div>
+
+<style>
+    .product-card {
+        border-radius: 0.8rem;
+    }
+    .product-img {
+        object-fit: contain;
+        padding: 1rem;
+    }
+    .product-badges {
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 2;
+    }
+</style>

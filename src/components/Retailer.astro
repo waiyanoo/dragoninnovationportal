@@ -21,19 +21,35 @@ export interface Props{
 
 const {data} = Astro.props;
 ---
-<div class="col-lg-6">
-    <div class="card">
-        <div class="card-body px-md-15 px-lg-3">
-            <h3>{data.name}</h3>
+<div class="col-md-6 col-xl-4 d-flex">
+    <div class="card shop-card shadow-lg lift w-100 h-100">
+        <div class="card-body p-5 p-md-6 d-flex flex-column text-start">
+            <h3 class="fs-19 mb-4">{data.name}</h3>
             {
                 data.addresses.map(address => {
-                    return <p class="mb-2">{address.address}</p> <p class="mb-2">{address.phone}</p>
+                    return <div class="d-flex flex-row mb-4">
+                        <div><div class="icon text-primary fs-22 me-3"><i class={`uil ${address.address ? 'uil-map-marker' : 'uil-phone'}`}></i></div></div>
+                        <div>
+                            {address.address && <p class="mb-1">{address.address}</p>}
+                            {address.phone && <p class="mb-0 text-body">{address.address && <i class="uil uil-phone me-1"></i>}{address.phone}</p>}
+                        </div>
+                    </div>
                 })
             }
             {
                 data.fb_link !== '' &&
-                    <a href={data.fb_link} class="more hover" target="_blank">Facebook Page</a>
+                    <div class="mt-auto pt-2">
+                        <a href={data.fb_link} class="more hover" target="_blank" rel="noopener">Facebook Page</a>
+                    </div>
             }
         </div>
+        <!--/.card-body -->
     </div>
+    <!--/.card -->
 </div>
+
+<style>
+    .shop-card {
+        border-radius: 0.8rem;
+    }
+</style>
