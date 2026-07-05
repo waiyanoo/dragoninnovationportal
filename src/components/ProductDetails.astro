@@ -25,109 +25,97 @@ export interface Props{
 
 const {data, path} = Astro.props;
 
+const sizes = data.sizes.filter(size => size);
+
 ---
 <section class="wrapper bg-light">
-    <div class="container py-14 py-md-16">
-        <div class="row gx-md-8 gx-xl-12 gy-8">
-            <div class="col-lg-6">
-                <div class="swiper-container swiper-thumbs-container" data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
-                    <div class="swiper">
-                        <div class="swiper-wrapper">
-                            {
-                                data.imgUrls.map(url => {
-                                    return  <div class="swiper-slide">
-                                        <figure class="rounded"><img src={path + url} srcset={path + url} alt="" /><a class="item-link" href={path + url} data-glightbox data-gallery="data-group"><i class="uil uil-focus-add"></i></a></figure>
-                                    </div>
-                                })
-                            }
-                            <!--/.swiper-slide -->
-                        </div>
-                        <!--/.swiper-wrapper -->
-                    </div>
-                    <!-- /.swiper -->
-                    <div class="swiper swiper-thumbs">
-                        <div class="swiper-wrapper">
-                            {
-                                data.imgUrls.map(url => {
-                                    return <div class="swiper-slide"><img src={path + url} srcset={path + url} class="rounded" alt="" /></div>
-                                })
-                            }
-
-                        </div>
-                        <!--/.swiper-wrapper -->
-                    </div>
-                    <!-- /.swiper -->
-                </div>
-                <!-- /.swiper-container -->
-            </div>
-            <!-- /column -->
-            <div class="col-lg-6">
-                <div class="post-header mb-5">
-                    <h2 class="post-title display-5"><a href="#" class="link-dark">{data.productName}</a></h2>
-                    <p class="price fs-20 mb-2"><span class="amount">{data.price}</span></p>
-                    <a href="#" class="link-body ratings-wrapper"><span class="ratings five"></span><span>(3 Reviews)</span></a>
-                </div>
-                <!-- /.post-header -->
-                <p class="mb-6">{data.shortDescription}</p>
-                <form>
-                    <fieldset class="picker">
-                        <legend class="h6 fs-16 text-body mb-3">Available size</legend>
-
-                        {
-                            data.sizes[0] &&
-                                <label for="size-1">
-                                    <input type="radio" name="sizes" id="size-1" disabled>
-                                    <span>{data.sizes[0]}</span>
-                                </label>
-                        }
-
-                        {
-                            data.sizes[1] &&
-                                <label for="size-2">
-                                    <input type="radio" name="sizes" id="size-2" disabled>
-                                    <span>{data.sizes[1]}</span>
-                                </label>
-                        }
-
-                    </fieldset>
-                    <div class="row">
-                        <div class="col-lg-9 d-flex flex-row pt-2">
-
-                            <div class="flex-grow-1 mx-2">
-                                <a class="btn btn-primary btn-icon btn-icon-start rounded w-100 flex-grow-1" href={data.messenger} target="_blank"><i class="uil uil-shopping-bag"></i> Buy Now</a>
+    <div class="container py-10 py-md-12">
+        <div class="card shadow-lg">
+            <div class="card-body p-5 p-md-8">
+                <div class="row gx-md-8 gx-xl-10 gy-6 align-items-center">
+                    <div class="col-lg-6">
+                        <div class="swiper-container swiper-thumbs-container" data-margin="10" data-dots="false" data-nav="true" data-thumbs="true">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    {
+                                        data.imgUrls.map(url => {
+                                            return  <div class="swiper-slide">
+                                                <figure class="rounded"><img src={path + url} srcset={path + url} alt={data.productName} /><a class="item-link" href={path + url} data-glightbox data-gallery="data-group"><i class="uil uil-focus-add"></i></a></figure>
+                                            </div>
+                                        })
+                                    }
+                                    <!--/.swiper-slide -->
+                                </div>
+                                <!--/.swiper-wrapper -->
                             </div>
+                            <!-- /.swiper -->
+                            <div class="swiper swiper-thumbs">
+                                <div class="swiper-wrapper">
+                                    {
+                                        data.imgUrls.map(url => {
+                                            return <div class="swiper-slide"><img src={path + url} srcset={path + url} class="rounded" alt={data.productName} /></div>
+                                        })
+                                    }
 
+                                </div>
+                                <!--/.swiper-wrapper -->
+                            </div>
+                            <!-- /.swiper -->
                         </div>
-                        <!-- /column -->
+                        <!-- /.swiper-container -->
                     </div>
-                    <!-- /.row -->
-                </form>
-                <!-- /form -->
+                    <!-- /column -->
+                    <div class="col-lg-6">
+                        <div class="d-flex flex-wrap align-items-center gap-1 mb-3">
+                            <span class="badge bg-pale-primary text-primary rounded-pill text-uppercase">{data.category}</span>
+                            {data.new && <span class="badge bg-aqua text-white rounded-pill text-uppercase">New</span>}
+                            {data.sales && <span class="badge bg-pink text-white rounded-pill text-uppercase">Sale</span>}
+                        </div>
+                        <h1 class="display-6 mb-2">{data.productName}</h1>
+                        {data.sales && <p class="price fs-22 mb-4"><del class="text-muted"><span class="amount">{data.price}</span></del> <ins><span class="amount">{data.discountPrice}</span></ins></p>}
+                        {!data.sales && <p class="price fs-22 mb-4"><span class="amount">{data.price}</span></p>}
+                        <p class="mb-5">{data.shortDescription}</p>
+                        {sizes.length > 0 &&
+                            <div class="mb-6">
+                                <div class="h6 fs-15 text-uppercase text-muted mb-2">Available size</div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    {sizes.map(size => <span class="badge bg-white border text-body rounded-pill fs-14 px-3 py-2">{size}</span>)}
+                                </div>
+                            </div>
+                        }
+                        <a class="btn btn-primary btn-icon btn-icon-start rounded-pill" href={data.messenger} target="_blank" rel="noopener"><i class="uil uil-shopping-bag"></i> Buy Now</a>
+                    </div>
+                    <!-- /column -->
+                </div>
+                <!-- /.row -->
+                <hr class="my-6 my-md-8" />
+                <ul class="nav nav-pills mb-4">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#tab1">Product Details</a>
+                    </li>
+                    {data.usage &&
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#tab2">How to Use</a>
+                        </li>
+                    }
+                </ul>
+                <!-- /.nav-pills -->
+                <div class="tab-content mt-0">
+                    <div class="tab-pane fade show active" id="tab1">
+                        <p class="mb-0" set:html={data.description}></p>
+                    </div>
+                    <!--/.tab-pane -->
+                    {data.usage &&
+                        <div class="tab-pane fade" id="tab2">
+                            <p class="mb-0">{data.usage}</p>
+                        </div>
+                    }
+                </div>
+                <!-- /.tab-content -->
             </div>
-            <!-- /column -->
+            <!--/.card-body -->
         </div>
-        <!-- /.row -->
-        <ul class="nav nav-tabs nav-tabs-basic mt-12">
-            <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#tab1">Product Details</a>
-
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab2">Usage</a>
-            </li>
-        </ul>
-        <!-- /.nav-tabs -->
-        <div class="tab-content mt-0 mt-md-5">
-            <div class="tab-pane fade show active" id="tab1">
-                <p set:html={data.description}></p>
-            </div>
-            <!--/.tab-pane -->
-            <div class="tab-pane fade show" id="tab2">
-                <p>{data.usage}</p>
-            </div>
-
-        </div>
-        <!-- /.tab-content -->
+        <!--/.card -->
     </div>
     <!-- /.container -->
 </section>
@@ -136,11 +124,3 @@ const {data, path} = Astro.props;
         data.crossDisplayProducts.length > 0 &&
         <CrossProducts ids={data.crossDisplayProducts} path={path}/>
     }
-
-
-<style is:inline>
-    .picker label {
-        inline-size: 5rem!important;
-    }
-
-</style>
