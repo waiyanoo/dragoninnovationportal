@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" fill="none" role="img" aria-label="Global trade network connecting international brands to Myanmar">
+  <defs>
+    <linearGradient id="globeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7cc8f5"/>
+      <stop offset="1" stop-color="#3b93d4"/>
+    </linearGradient>
+    <clipPath id="globeClip">
+      <circle cx="320" cy="268" r="122"/>
+    </clipPath>
+    <style>
+      .float  { animation: float 6s ease-in-out infinite; }
+      .float2 { animation: float 7s ease-in-out -2s infinite; }
+      .float3 { animation: float 8s ease-in-out -4s infinite; }
+      .float4 { animation: float 9s ease-in-out -3s infinite; }
+      .route  { animation: dash 1.4s linear infinite; }
+      .twinkle  { animation: twinkle 3s ease-in-out infinite; }
+      .twinkle2 { animation: twinkle 3s ease-in-out -1s infinite; }
+      .twinkle3 { animation: twinkle 3s ease-in-out -2s infinite; }
+      .pulse { transform-origin: center; transform-box: fill-box; animation: pulse 2.4s ease-out infinite; }
+      .bar { transform-origin: bottom; transform-box: fill-box; animation: grow 1.2s ease-out both; }
+      .b2 { animation-delay: .25s }
+      .b3 { animation-delay: .5s }
+      @keyframes float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+      @keyframes dash { to { stroke-dashoffset: -28 } }
+      @keyframes twinkle { 0%,100% { opacity: .2 } 50% { opacity: 1 } }
+      @keyframes pulse { 0% { transform: scale(.5); opacity: .65 } 75% { transform: scale(1.8); opacity: 0 } 100% { transform: scale(1.8); opacity: 0 } }
+      @keyframes grow { from { transform: scaleY(0) } }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <ellipse cx="330" cy="266" rx="302" ry="234" fill="#e9f5fd"/>
+  <circle cx="112" cy="96" r="42" fill="#f2f9fe"/>
+  <ellipse cx="320" cy="474" rx="185" ry="15" fill="#d7ecfb"/>
+
+  <!-- sparkles -->
+  <path class="twinkle" d="M240 52 C241.5 59 243 60.5 250 62 C243 63.5 241.5 65 240 72 C238.5 65 237 63.5 230 62 C237 60.5 238.5 59 240 52 Z" fill="#fab758"/>
+  <path class="twinkle2" d="M602 214 C603.5 221 605 222.5 612 224 C605 225.5 603.5 227 602 234 C600.5 227 599 225.5 592 224 C599 222.5 600.5 221 602 214 Z" fill="#5eb9f0"/>
+  <path class="twinkle3" d="M150 448 C151.5 455 153 456.5 160 458 C153 459.5 151.5 461 150 468 C148.5 461 147 459.5 140 458 C147 456.5 148.5 455 150 448 Z" fill="#fab758"/>
+  <path class="twinkle2" d="M418 70 C419.5 77 421 78.5 428 80 C421 81.5 419.5 83 418 90 C416.5 83 415 81.5 408 80 C415 78.5 416.5 77 418 70 Z" fill="#5eb9f0"/>
+  <path class="twinkle" d="M96 358 C97.5 365 99 366.5 106 368 C99 369.5 97.5 371 96 378 C94.5 371 93 369.5 86 368 C93 366.5 94.5 365 96 358 Z" fill="#5eb9f0"/>
+
+  <!-- trade routes from global markets -->
+  <circle cx="66" cy="180" r="9" fill="#ffffff" stroke="#5eb9f0" stroke-width="3"/>
+  <path class="route" d="M 78 184 C 124 198, 172 214, 214 232" stroke="#5eb9f0" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+  <circle cx="78" cy="428" r="8" fill="#ffffff" stroke="#5eb9f0" stroke-width="3"/>
+  <path class="route" d="M 90 424 C 152 410, 216 394, 272 372" stroke="#5eb9f0" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+  <circle cx="596" cy="320" r="8" fill="#ffffff" stroke="#5eb9f0" stroke-width="3"/>
+  <path class="route" d="M 586 318 C 540 314, 492 308, 448 298" stroke="#5eb9f0" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+
+  <!-- orbit rings (behind globe) -->
+  <ellipse cx="320" cy="268" rx="190" ry="64" transform="rotate(-18 320 268)" stroke="#a9d9f7" stroke-width="2"/>
+  <ellipse cx="320" cy="268" rx="175" ry="58" transform="rotate(28 320 268)" stroke="#c5e5fa" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+  <!-- globe -->
+  <circle cx="320" cy="268" r="122" fill="url(#globeGrad)"/>
+  <g clip-path="url(#globeClip)">
+    <path d="M 246 200 C 266 178, 298 184, 308 206 C 330 200, 346 216, 338 238 C 354 246, 352 268, 334 272 C 320 288, 292 282, 285 265 C 263 268, 249 252, 257 234 C 242 226, 236 210, 246 200 Z" fill="#ffffff" fill-opacity="0.3"/>
+    <path d="M 352 300 C 368 290, 388 296, 390 312 C 404 316, 402 334, 386 337 C 372 346, 352 340, 350 324 C 340 315, 343 305, 352 300 Z" fill="#ffffff" fill-opacity="0.3"/>
+    <path d="M 260 320 C 272 312, 288 318, 288 330 C 296 336, 290 348, 278 348 C 266 352, 254 344, 256 332 C 252 326, 254 322, 260 320 Z" fill="#ffffff" fill-opacity="0.22"/>
+    <g stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.5" fill="none">
+      <ellipse cx="320" cy="268" rx="46" ry="122"/>
+      <ellipse cx="320" cy="268" rx="90" ry="122"/>
+      <ellipse cx="320" cy="268" rx="122" ry="44"/>
+      <ellipse cx="320" cy="268" rx="122" ry="86"/>
+      <line x1="198" y1="268" x2="442" y2="268"/>
+    </g>
+  </g>
+  <circle cx="320" cy="268" r="122" stroke="#ffffff" stroke-opacity="0.7" stroke-width="3"/>
+
+  <!-- destination pin: Myanmar -->
+  <circle class="pulse" cx="358" cy="228" r="26" fill="#e2626b" opacity="0.45"/>
+  <path d="M358 200 c 16 0 28 12 28 27 0 18 -28 43 -28 43 s -28 -25 -28 -43 c 0 -15 12 -27 28 -27 z" fill="#e2626b" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="358" cy="227" r="8" fill="#ffffff"/>
+
+  <!-- shipments travelling the orbits -->
+  <circle r="6" fill="#5eb9f0" stroke="#ffffff" stroke-width="2.5">
+    <animateMotion dur="10s" repeatCount="indefinite" path="M 139.3 326.7 A 190 64 -18 0 1 500.7 209.3 A 190 64 -18 0 1 139.3 326.7 Z"/>
+  </circle>
+  <circle r="5" fill="#fab758" stroke="#ffffff" stroke-width="2.5">
+    <animateMotion dur="13s" repeatCount="indefinite" path="M 474.5 350.1 A 175 58 28 0 1 165.5 185.9 A 175 58 28 0 1 474.5 350.1 Z"/>
+  </circle>
+
+  <!-- floating parcels -->
+  <g class="float">
+    <rect x="284" y="74" width="36" height="30" rx="4" fill="#fab758"/>
+    <line x1="302" y1="74" x2="302" y2="104" stroke="#ffffff" stroke-width="3"/>
+    <rect x="326" y="88" width="26" height="22" rx="3" fill="#9ed5f6"/>
+    <line x1="339" y1="88" x2="339" y2="110" stroke="#ffffff" stroke-width="2.5"/>
+  </g>
+
+  <!-- shipment card -->
+  <g class="float2">
+    <rect x="52" y="64" width="118" height="58" rx="12" fill="#ffffff" stroke="#dbeefc" stroke-width="2"/>
+    <rect x="66" y="80" width="24" height="20" rx="3" fill="#fab758"/>
+    <line x1="78" y1="80" x2="78" y2="100" stroke="#ffffff" stroke-width="2"/>
+    <rect x="98" y="80" width="56" height="7" rx="3.5" fill="#cfeafb"/>
+    <rect x="98" y="93" width="40" height="7" rx="3.5" fill="#e5f4fd"/>
+  </g>
+
+  <!-- delivered card -->
+  <g class="float4">
+    <rect x="468" y="56" width="120" height="58" rx="12" fill="#ffffff" stroke="#dbeefc" stroke-width="2"/>
+    <circle cx="492" cy="85" r="13" fill="#45c4a0"/>
+    <path d="M 486 85 L 490.5 89.5 L 499 80" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="514" y="72" width="58" height="7" rx="3.5" fill="#cfeafb"/>
+    <rect x="514" y="85" width="42" height="7" rx="3.5" fill="#e5f4fd"/>
+  </g>
+
+  <!-- growth card -->
+  <g class="float3">
+    <rect x="486" y="368" width="128" height="96" rx="14" fill="#ffffff" stroke="#dbeefc" stroke-width="2"/>
+    <rect class="bar" x="502" y="430" width="16" height="22" rx="3" fill="#5eb9f0" fill-opacity="0.45"/>
+    <rect class="bar b2" x="526" y="414" width="16" height="38" rx="3" fill="#5eb9f0" fill-opacity="0.7"/>
+    <rect class="bar b3" x="550" y="394" width="16" height="58" rx="3" fill="#5eb9f0"/>
+    <path d="M 500 422 C 524 406, 544 394, 566 382" stroke="#fab758" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M 570 379 L 556 380 L 564 392 Z" fill="#fab758"/>
+  </g>
+</svg>
