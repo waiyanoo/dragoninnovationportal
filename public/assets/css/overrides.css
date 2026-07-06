@@ -1,0 +1,20 @@
+/*
+ * Site overrides — loaded after the Sandbox theme stylesheets.
+ *
+ * The theme's light section backgrounds (~#f1f3f8) are nearly
+ * indistinguishable from white cards on bright or low-contrast
+ * displays. Darken them a step and give cards a visible border so
+ * separation does not rely on box shadows alone.
+ */
+
+.bg-light {
+    background: #eaeef4 !important;
+}
+
+.bg-gray {
+    background: #eff1f5 !important;
+}
+
+.card {
+    border: 1px solid rgba(164, 174, 198, 0.4);
+}
